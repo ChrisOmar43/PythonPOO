@@ -3,6 +3,20 @@ class Hotel:
         self.numero_maximo_de_huespedes = numero_maximo_de_huespedes
         self.lugares_de_estacionamiento =lugares_de_estacionamiento
         self.huespedes = 0
+    
+    def anadir_huespedes(self, cantidad_de_huespedes):
+        self.huespedes += cantidad_de_huespedes
 
-hotelMisHuevos = Hotel(numero_maximo_de_huespedes=50, lugares_de_estacionamiento=20)
-print(hotelMisHuevos.numero_maximo_de_huespedes)
+    def checkout(self, cantidad_de_huespedes):
+        self.huespedes -= cantidad_de_huespedes
+
+    def ocupacion_total(self):
+        return self.huespedes
+
+
+hotel = Hotel(50, 20)
+hotel.anadir_huespedes(3)
+hotel.checkout(1)
+hotel.ocupacion_total()
+
+print(hotel.numero_maximo_de_huespedes)

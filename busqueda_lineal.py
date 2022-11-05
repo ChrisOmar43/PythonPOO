@@ -2,7 +2,6 @@ import random
 
 def busqueda_lineal(lista, objetivo, numero_de_pasos = 0):
     match = False
-    iteraciones = 0
     f=[]
 
     for elemento in lista:

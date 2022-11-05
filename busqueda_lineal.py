@@ -2,15 +2,17 @@ import random
 
 def busqueda_lineal(lista, objetivo, numero_de_pasos = 0):
     match = False
+    iteraciones = 0
+    f=[]
 
     for elemento in lista:
-
-        numero_de_pasos += 1
+        iteraciones += 1
         if elemento == objetivo:
             match = True
             break
-
-    return (match, numero_de_pasos)
+    f = [match, iteraciones]
+    return f
+    
 
 if __name__ == '__main__':
     tamano_de_lista = int(input('De que tamaño sera la lista? '))
@@ -19,5 +21,6 @@ if __name__ == '__main__':
     pasos = 0
     encontrado = busqueda_lineal(lista, objetivo, pasos)
     print(lista)
-    print(f'El elemento {objetivo} {"esta" if encontrado else "no esta "} en la lista')
-    print(f'Los pasos necesarios fueron {pasos}')
+    print(f'El elemento {objetivo} {"esta" if encontrado[0] else "no esta"} en la lista')
+    if (encontrado[0]):
+        print(f'Se necesitaron {encontrado[1]} pasos')
